@@ -21,13 +21,19 @@ const config = {
         exclude: /node_modules/
       },
       {
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              modules:true
             }
           },
           'postcss-loader'
@@ -59,6 +65,13 @@ const config = {
     'static': {
       directory: './dist'
     },
+  },
+  resolve: {
+    extensions: [
+      '.tsx',
+      '.ts',
+      '.js'
+    ]
   }
 };
 
