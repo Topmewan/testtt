@@ -5,11 +5,10 @@ import { FC } from 'react'
 
 interface InputProps extends React.HTMLProps<HTMLInputElement> {
   isActive: boolean,
-  variant?: string
 
 }
 
-const Input: FC<InputProps> = ({ label, type, variant, isActive, ...props }) => {
+const Input: FC<InputProps> = ({ label, type, isActive, ...props }) => {
 
   return (
     <div className={styles.wrapper}>
@@ -17,7 +16,6 @@ const Input: FC<InputProps> = ({ label, type, variant, isActive, ...props }) => 
       <input
         className={`
         ${styles.input} 
-        ${variant === 'textarea' ? styles.textarea : ''} 
         ${isActive ? styles.disabled : ''}
         `}
         {...props}

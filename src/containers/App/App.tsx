@@ -4,7 +4,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import UsersList from '../../components/UsersList/UsersList'
 import { useContext } from 'react'
 import { IUsersContext, UsersContext } from '../../context/UsersContext'
-import UserForm from '../../components/UserForm/UserForm'
+import UserForm from '../UserForm/UserForm'
 
 const App = () => {
 

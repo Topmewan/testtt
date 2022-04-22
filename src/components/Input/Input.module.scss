@@ -9,16 +9,19 @@
     font-size: 1em;
   }
 
-  .input {
-    min-height: 22px;
+  .input, .textarea {
     border: 1px solid #D8D8D8;
     border-radius: 5px;
-    margin-top: 3px;
     padding: 5px 10px;
+    margin-top: 3px;
+
+  }
+
+  .input {
+    min-height: 22px;
 
     &:invalid {
-      border: 1px solid red;
-
+      border: 1px solid #D91313;
     }
   }
 
@@ -27,8 +30,10 @@
     color: rgba(0, 0, 0, 0.3);
   }
 
-  .textarea{
+  .textarea {
     min-height: 55px;
+    resize: none;
+
   }
 
 }

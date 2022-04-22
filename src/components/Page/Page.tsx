@@ -1,6 +1,7 @@
 import * as React from "react"
-import styles from './Page.module.scss'
 import { FC, ReactChild, ReactNode } from 'react'
+
+import styles from './Page.module.scss'
 
 interface pageProps{
   children:ReactNode | ReactChild

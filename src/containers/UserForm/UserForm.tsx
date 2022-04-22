@@ -1,11 +1,16 @@
 import * as React from 'react'
-import Page from '../Page/Page'
-import Button from '../Button/Button'
-import { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react'
-import { Address, CustomUser } from '../../types'
+import { FC } from 'react'
+
+import Input from '../../components/Input/Input'
+import Textarea from '../../components/Input/Textarea'
+import Page from '../../components/Page/Page'
+import Button from '../../components/Button/Button'
+import { useFormHelper } from '../../hooks/useFormHelper'
+
+import { CustomUser } from '../../types'
 
 import styles from './UserForm.module.scss'
-import Input from '../Input/Input'
+
 
 interface formProps {
   currentUser: CustomUser
@@ -14,20 +19,8 @@ interface formProps {
 
 const UserForm: FC<formProps> = ({ currentUser }) => {
 
-  const [formValues, setFormValues] = useState<CustomUser>(currentUser)
+  const { formValues, setFormValues, isActive, handleSubmit, setIsActive } = useFormHelper(currentUser)
   const { name, username, email, address, phone, website, comment } = formValues
-  const [isActive, setIsActive] = useState<boolean>(true)
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    alert(JSON.stringify(formValues))
-  }
-
-  useEffect(() => {
-    if (currentUser) {
-      setFormValues({ ...currentUser })
-    }
-  }, [currentUser])
 
   return (
     <Page>
@@ -38,10 +31,10 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputs}>
-
             <Input
               label='Name'
               placeholder='Name'
+              required={true}
               value={name}
               isActive={isActive}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,6 +43,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
             />
 
             <Input
+              required={true}
+
               label='User name'
               value={username}
               placeholder='User name'
@@ -59,6 +54,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
               isActive={isActive}
             />
             <Input
+              required={true}
+
               label='E-mail'
               value={email}
               placeholder='E-mail'
@@ -69,6 +66,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
             />
 
             <Input
+              required={true}
+
               label='Street'
               value={address.street}
               placeholder='Street'
@@ -79,6 +78,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
               isActive={isActive}
             />
             <Input
+              required={true}
+
               label='City'
               value={address.city}
               placeholder='City'
@@ -89,6 +90,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
               isActive={isActive}
             />
             <Input
+              required={true}
+
               label='Zip code'
               value={address.zipcode}
               placeholder='Zip code'
@@ -99,6 +102,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
               isActive={isActive}
             />
             <Input
+              required={true}
+
               label='Phone'
               value={phone}
               placeholder='Phone'
@@ -108,6 +113,8 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
               isActive={isActive}
             />
             <Input
+              required={true}
+
               label='Website'
               value={website}
               placeholder='Website'
@@ -118,11 +125,10 @@ const UserForm: FC<formProps> = ({ currentUser }) => {
             />
           </div>
           <div className={styles.textarea}>
-            <Input
+            <Textarea
               label='Comment'
               value={comment}
-              variant='textarea'
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                 setFormValues({ ...formValues, comment: e.target.value })
               }}
               isActive={isActive}

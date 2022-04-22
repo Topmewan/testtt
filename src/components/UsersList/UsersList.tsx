@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { FC, useContext } from 'react'
-import styles from './UsersList.module.scss'
-import UserCard from '../UserCard/UserCard'
 import { UsersContext, IUsersContext } from '../../context/UsersContext'
 import Page from '../Page/Page'
+import UserCard from '../UserCard/UserCard'
+
+import styles from './UsersList.module.scss'
+
 
 const UsersList: FC = () => {
 
