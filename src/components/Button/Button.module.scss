@@ -1,0 +1,33 @@
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  min-width: 10ch;
+  border: none;
+  outline: none;
+  background-color: #4B51EF;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.button:disabled {
+  background-color: #AFAFAF;
+  color: white;
+  pointer-events: none;
+}
+
+.primary {
+  padding: 0;
+  color: #4B51EF;
+  background: transparent;
+  border-radius:0;
+}
+
+.secondary {
+  background-color: #52CF4F;
+  color: white;
+}

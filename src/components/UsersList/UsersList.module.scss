@@ -1,0 +1,23 @@
+.content {
+  width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 17px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .count {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+}

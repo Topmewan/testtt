@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+
+  label {
+    font-weight: 400;
+    font-size: 1em;
+  }
+
+  .input {
+    min-height: 22px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    margin-top: 3px;
+    padding: 5px 10px;
+
+    &:invalid {
+      border: 1px solid red;
+
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .textarea{
+    min-height: 55px;
+  }
+
+}
+
+
+
+

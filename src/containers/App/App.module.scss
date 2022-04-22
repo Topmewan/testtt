@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100%;
+  background: #E5E5E5;
+  padding: 50px 0;
+
+  .container {
+    max-width: 665px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1028px;
+
+    .row {
+      display: flex;
+      height: 100%;
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
+    }
+  }
+}
